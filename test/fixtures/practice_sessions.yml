@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  path_id: 
+  user_id: 
+  duration: 1
+
+two:
+  path_id: 
+  user_id: 
+  duration: 1

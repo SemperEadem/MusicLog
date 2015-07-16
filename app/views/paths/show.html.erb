@@ -1,0 +1,18 @@
+<h1><%= @path.name %></h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Exercice</th>
+			<th>Parcours</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= @path.exercises.find_each do |e| %>
+			<tr>
+				<td><%= e.name %></td>
+				<td><%= e.path.name %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
