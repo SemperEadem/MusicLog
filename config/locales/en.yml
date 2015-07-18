@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    scale: scale
+    attributes:
+      user_exercise:
+        uses_scales: This exercise is based on scales. Please choose the scale you're working on.
+        tension_level: Tension level
+        notes: Other observations

@@ -4,4 +4,6 @@ class PracticeSession < ActiveRecord::Base
 
   has_many :user_exercises
   has_many :exercises, through: :user_exercises
+
+  validates :path, presence: true
 end

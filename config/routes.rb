@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'paths/show'
+  # Authentication
 
   devise_for :users
+
+  # Static Pages
 
   root "pages#home"
 
@@ -10,7 +12,10 @@ Rails.application.routes.draw do
     resources :practice_sessions
   end
 
-  resources :practice_sessions, only: [:new]
+  resources :practice_sessions, only: [:new, :create, :show]
   resources :paths, only: [:show]
+  resources :user_exercises, only: [:new, :create]
+
+  get "exercises/:id/start" => "user_exercises#new", as: "start_user_exercise"
 
 end

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :practice_sessions
+
   has_many :user_exercises
   has_many :exercises, through: :user_exercises
 end

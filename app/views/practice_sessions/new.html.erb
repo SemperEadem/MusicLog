@@ -1,1 +1,20 @@
-Nouvelle session
+<h1>Nouvelle session</h1>
+
+<% if @practice_session.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@practice_session.errors.count, "error") %> ont empêché la création de votre session : </h2>
+
+    <ul>
+    <% @practice_session.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @practice_session do |f| %>
+  <div class="form-group">
+    <%= f.collection_select(:path_id, Path.all, :id, :name, :prompt => 'Sélectionnez un instrument', class: "form-control") %>
+  </div>
+  <%= f.submit "Commencer la session !", class: "btn btn-success" %>
+<% end %>
